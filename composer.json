@@ -1,5 +1,5 @@
 {
-  "name": "h2s/utils",
+  "name": "h2s-framework/utils",
   "description": "H2S Framework utilities library",
   "minimum-stability": "stable",
   "license": "proprietary",
