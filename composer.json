@@ -1,6 +1,6 @@
 {
-  "name": "siarkowodor/h2s-utils",
-  "description": "description",
+  "name": "h2s/utils",
+  "description": "H2S Framework utilities library",
   "minimum-stability": "stable",
   "license": "proprietary",
   "version": "0.1.0",
