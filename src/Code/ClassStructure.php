@@ -157,6 +157,22 @@ class ClassStructure
     }
 
     /**
+     * @return bool
+     */
+    public function isInterface(): bool
+    {
+        return $this->reflection->isInterface();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAbstract(): bool
+    {
+        return (!$this->isInterface()) && $this->reflection->isAbstract();
+    }
+
+    /**
      * @return ReflectionClass
      */
     public function getNativeReflection(): ReflectionClass

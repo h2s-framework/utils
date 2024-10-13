@@ -3,7 +3,6 @@
   "description": "H2S Framework utilities library",
   "minimum-stability": "stable",
   "license": "proprietary",
-  "version": "0.1.0",
   "type": "library",
   "authors": [
     {
