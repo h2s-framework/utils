@@ -7,7 +7,7 @@ class SimpleType extends AbstractType
 
     public function __construct(
         private readonly string $name,
-        private readonly ?bool $builtIn = false,
+        private readonly null|bool $builtIn = false,
         bool $nullable = false
     )
     {
