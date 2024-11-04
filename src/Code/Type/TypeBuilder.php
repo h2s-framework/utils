@@ -53,7 +53,7 @@ class TypeBuilder
         if($reflectionType->getName() === 'array') {
             return $this->buildArrayType($reflectionType, $annotatedType);
         }
-        return new SimpleType($reflectionType->getName(), $reflectionType->allowsNull());
+        return new SimpleType($reflectionType->getName(), $reflectionType->isBuiltin(), $reflectionType->allowsNull());
     }
 
     /**
@@ -79,7 +79,7 @@ class TypeBuilder
             return new ArrayType($this->recurrentArrayParser($annotatedType->type));
         }
         if($annotatedType->type instanceof IdentifierTypeNode){
-            return new ArrayType(new SimpleType($annotatedType->type->name));
+            return new ArrayType(new SimpleType($annotatedType->type->name, null));
         }
         return new ArrayType(null);
     }

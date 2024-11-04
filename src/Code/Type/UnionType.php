@@ -2,10 +2,8 @@
 
 namespace Siarko\Utils\Code\Type;
 
-class UnionType implements TypeInterface
+class UnionType extends AbstractType
 {
-
-    private ?bool $nullable = null;
 
     /**
      * @param TypeInterface[] $types
@@ -14,6 +12,7 @@ class UnionType implements TypeInterface
         private readonly array $types
     )
     {
+        parent::__construct(null);
     }
 
     /**

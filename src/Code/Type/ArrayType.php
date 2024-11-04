@@ -2,7 +2,7 @@
 
 namespace Siarko\Utils\Code\Type;
 
-class ArrayType implements TypeInterface
+class ArrayType extends AbstractType
 {
 
     /**
@@ -11,9 +11,10 @@ class ArrayType implements TypeInterface
      */
     public function __construct(
         private readonly ?TypeInterface $type,
-        private readonly bool $nullable = false
+        bool $nullable = false
     )
     {
+        parent::__construct($nullable);
     }
 
     /**
@@ -30,14 +31,6 @@ class ArrayType implements TypeInterface
     public function getType(): ?TypeInterface
     {
         return $this->type;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isNullable(): bool
-    {
-        return $this->nullable;
     }
 
 }

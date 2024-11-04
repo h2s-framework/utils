@@ -44,4 +44,14 @@ class EnvLoader extends DynamicDataObject
         return $result;
     }
 
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function getData(string $name): mixed
+    {
+        return $this->arrayManager->get($name, $this->__data, null, '.');
+    }
+
+
 }

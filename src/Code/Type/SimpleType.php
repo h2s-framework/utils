@@ -2,14 +2,16 @@
 
 namespace Siarko\Utils\Code\Type;
 
-class SimpleType implements TypeInterface
+class SimpleType extends AbstractType
 {
 
     public function __construct(
         private readonly string $name,
-        private readonly bool $nullable = false
+        private readonly ?bool $builtIn = false,
+        bool $nullable = false
     )
     {
+        parent::__construct($nullable);
     }
 
     /**
@@ -17,7 +19,7 @@ class SimpleType implements TypeInterface
      */
     public function isObjectType(): bool
     {
-        return str_contains($this->name, '\\');
+        return (is_null($this->builtIn) ? str_contains($this->name, '\\') : !$this->builtIn);
     }
 
     /**
@@ -27,15 +29,5 @@ class SimpleType implements TypeInterface
     {
         return $this->name;
     }
-
-    /**
-     * @return bool
-     */
-    public function isNullable(): bool
-    {
-        return $this->nullable;
-    }
-
-
 
 }

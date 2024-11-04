@@ -79,11 +79,14 @@ class MessageManager
      * @param string|null $type
      * @param bool $clear
      * @return array
+     * @throws \ReflectionException
      */
     public function getMessages(?string $type = null, bool $clear = true): array
     {
         $messages = $this->sessionManager->get(self::MESSAGES_KEY, []);
-        $this->sessionManager->set(self::MESSAGES_KEY, []);
+        if($clear){
+            $this->sessionManager->set(self::MESSAGES_KEY, []);
+        }
         $result = [];
         foreach ($messages as $msgType => $message) {
             if($type == null || ($type == $msgType)){
