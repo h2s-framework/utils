@@ -72,7 +72,7 @@ class Strings
      */
     public static function camelCaseToSnakeCase(string $string): string
     {
-        return strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $string));
+        return strtolower(preg_replace('/(?<=\\w)(?=[A-Z])|(?<=[a-z])(?=[0-9])/', '_$0', $string));
     }
 
     /**

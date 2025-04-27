@@ -3,8 +3,6 @@
 namespace Siarko\Utils;
 
 use Siarko\DependencyManager\DependencyManager;
-use Siarko\DependencyManager\Type\TypedArgument;
-use Siarko\DependencyManager\Type\TypedValue;
 use Siarko\Utils\Code\Type\ArrayType;
 use Siarko\Utils\Code\Type\SimpleType;
 use Siarko\Utils\Code\Type\TypeInterface;
@@ -33,7 +31,8 @@ class TypeManager
         self::TYPE_DOUBLE,
         self::TYPE_ARRAY,
         self::TYPE_ITERABLE,
-        self::TYPE_MIXED
+        self::TYPE_MIXED,
+        self::TYPE_CONST
     ];
 
     /**
